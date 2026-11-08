@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>未整理ギャラリー</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f9f9f9;
+            color: #333;
+        }
+        h1 { text-align: center; font-size: 1.5rem; }
+        
+        /* カテゴリごとのセクション */
+        .category-section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        /* 画像グリッド（一覧用） */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+        }
+        .grid img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .grid img:hover {
+            transform: scale(1.03);
+        }
+
+        /* モーダル（詳細画像表示用） */
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #modal img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 4px;
+        }
+        #modal.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+<center>
+  <table border="0" width="637">
+    <tbody> 
+    <tr> 
+      <td nowrap width="12">1</td>
+      <td nowrap width="0"></td>
+      <td width="276" align="center" bgcolor="#f8f8f8" nowrap> 
+        <p><font color="#0054B8" size="2"><a href="000start.htm">はじめに</a></font></p></td>
+    </tr>
+    <tr> 
+      <td nowrap width="12">2</td>
+      <td nowrap width="0"></td>
+      <td align="center" bgcolor="#f8f8f8"><font color="#0054B8" size="2"><a href="gengou.htm">高見家関連年表</a></font></td>
+    </tr>
+    <tr> 
+      <td nowrap width="12">3</td>
+      <td nowrap width="0"></td>
+      <td align="center" bgcolor="#f8f8f8"><font color="#0054B8" size="2">本国及び初代和田勝五郎重治（後高見権右衛門重治）</font></td>
+    </tr>
+    <tr> 
+      <td nowrap width="12">4</td>
+      <td nowrap width="0"></td>
+      <td align="center" bgcolor="#f8f8f8"><font color="#0054B8" size="2"><a href="2dai.htm">二代高見権右衛門重政</a></font></td>
+    </tr>
+    <tr> 
+      <td nowrap width="12">5</td>
+      <td nowrap width="0"></td>
+      <td align="center" bgcolor="#f8f8f8"><font color="#0054B8" size="2"><a href="3dai.htm">三代高見権之助</a></font></td>
+    </tr>
+    <tr> 
+      <td nowrap width="14">6</td>
+      <td nowrap width="0"></td>
+      <td align="center" bgcolor="#f8f8f8" nowrap width="276"><font color="#0054B8" size="2"><a href="4dai.htm">四代高見三右衛門</a></font></td>
+    </tr>
+    <tr> 
+      <td nowrap width="12">7</td>
+      <td nowrap width="0"></td>
+      <td align="center" bgcolor="#f8f8f8" nowrap width="276"><font color="#0054B8" size="2"><a href="5dai.htm">五代高見権右衛門政武</a></font></td>
+    </tr>
+    <tr> 
+      <td nowrap width="14">8</td>
+      <td nowrap width="0"></td>
+      <td align="center" bgcolor="#f8f8f8" nowrap width="285"><font color="#0054B8" size="2"><a href="6dai.htm">六代高見権右衛門</a></font></td>
+    </tr>
+    <tr> 
+      <td nowrap width="12">9</td>
+      <td nowrap width="0"></td>
+      <td align="center" bgcolor="#f8f8f8" nowrap width="276"><font color="#0054B8" size="2"><a href="7dai.htm">七代高見権之助政朱</a></font></td>
+    </tr>
+    <tr> 
+      <td nowrap width="12">10</td>
+      <td nowrap width="0"></td>
+      <td align="center" bgcolor="#f8f8f8" nowrap width="285"><font color="#0054B8" size="2"><a href="8dai.htm">八代高見右源太政信</a></font></td>
+    </tr>
+    <tr> 
+      <td nowrap width="12">11</td>
+      <td nowrap width="0"></td>
+      <td align="center" bgcolor="#f8f8f8" nowrap width="276"><font color="#0054B8" size="2"><a href="9dai.htm">九代高見數衛政久（後権右衛門武久）</a></font></td>    </tr>
+    <tr> 
+      <td nowrap width="12">12</td>
+      <td nowrap width="0"></td>
+      <td nowrap width="285"> 
+        <div align="center"><font color="#0054B8" size="2"><a href="10dai.htm">十代高見嶋之助武棟（後権右衛門武棟）</a></font></div>
+      </td>
+    </tr>
+    <tr> 
+      <td nowrap width="12">13</td>
+      <td nowrap width="0"></td>
+      <td align="center" bgcolor="#f8f8f8" nowrap width="276"><font color="#0054B8" size="2"><a href="11dai.htm">十一代高見熊之助（後嶋之助）</a></font></td>
+    </tr>
+    <tr> 
+      <td nowrap width="12">14</td>
+      <td nowrap width="0"></td>
+      <td nowrap width="285"> 
+        <div align="center"><font color="#0054B8" size="2"><a href="12dai.htm">十二代高見直熊（後権右衛門・祖厚）</a></font></div>
+      </td>
+    </tr>
+    </tbody> 
+  </table>
+  <br>
+</center>
+
+    <h1>未整理ギャラリー</h1>
+
+    <!-- カテゴリ1 -->
+    <div class="category-section">
+        <h2>カテゴリ名 1</h2>
+        <div class="grid">
+            <!-- thumbs（一覧用）をクリックすると originals（詳細用）の画像モーダルが開く -->
+            <img src="category1/thumbs/img01.jpg" data-full="category1/originals/img01.jpg" alt="画像1">
+            <img src="category1/thumbs/img02.jpg" data-full="category1/originals/img02.jpg" alt="画像2">
+        </div>
+    </div>
+
+    <!-- カテゴリ2 -->
+    <div class="category-section">
+        <h2>カテゴリ名 2</h2>
+        <div class="grid">
+            <img src="category2/thumbs/img01.jpg" data-full="category2/originals/img01.jpg" alt="画像A">
+        </div>
+    </div>
+
+    <!-- 詳細表示用モーダル -->
+    <div id="modal" onclick="closeModal()">
+        <img id="modal-img" src="" alt="詳細画像">
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        const images = document.querySelectorAll('.grid img');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                const fullSrc = img.getAttribute('data-full');
+                modalImg.src = fullSrc;
+                modal.classList.add('active');
+            });
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+            modalImg.src = '';
+        }
+    </script>
+
+</body>
+</html>
